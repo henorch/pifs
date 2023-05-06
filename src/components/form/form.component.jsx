@@ -1,10 +1,14 @@
+import { useForm } from "react-hook-form";
 import { Label, Group, Input} from "./form.styled";
 
-const FormInput = ({label, ...OtherProps}) => {
+
+const FormInput = ({register,  label, ...OtherProps}) => {
     return(
         <Group>
              <Label>{label}</Label>
-            <Input {...OtherProps}/>
+            <Input  {...register(label, {required: `${label} is required`,
+        })}/>
+            
         </Group>
        
     )

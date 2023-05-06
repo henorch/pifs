@@ -25,3 +25,12 @@ export const Link = styled.a`
     font-style: italic;
     margin-top:10px;
 `
+
+export const ErrorShow = styled.div`
+        display: flex;
+        padding: 10px 5px;
+        margin-left: 20px;
+        margin-top: -15px;
+        color: red;
+        text-align:left;
+`
