@@ -8,7 +8,7 @@ const AuthComponent = () => {
         <div>
           <AuthContainer>
             <Tab to='/auth'>SIGN IN</Tab>
-            <Tab to='signUp'>SIGN OUT</Tab>
+            <Tab to='signUp'>SIGN UP</Tab>
           </AuthContainer>
            <Outlet/>
         </div>
