@@ -16,7 +16,10 @@ const SignIn = () => {
 
    
    const handleSignInWithGoogle = async () => {
-     await signInWithGoogleRedirect()
+    const { email, password } = data
+    const {user} = await signInWithGoogleRedirect()
+     await createUserAurhWithEmailAndPAssword(user);
+     setCurrentUser(user)
    }
    const onSubmit = async (data) => {
     const { email, password} = data;
