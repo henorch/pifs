@@ -1,16 +1,18 @@
+import { useContext } from "react";
 import { CategoryContainer, 
     TitleHolder,
-     Radio,
-     ItemsHolder } from "./categories.styled"
+} from "./categories.styled"
 import CategoryItems from "./categoryitem.component";
+import { ProductContext } from "../../contexts/product.context";
 
 
 const CategoriesMain = ({title, CATEGORIES}) => {
+    const {filteredProduct} = useContext(ProductContext)
     return (
         <>
         <TitleHolder>{title}</TitleHolder>
         <CategoryContainer>
-            {CATEGORIES.map((categories) => <CategoryItems key={categories.id} categories={categories}/>)}
+            {filteredProduct?.map((categories) => <CategoryItems key={categories.id} categories={categories}/>)}
         </CategoryContainer>
         </>
     )

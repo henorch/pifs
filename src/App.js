@@ -10,11 +10,17 @@ import Furnitures from './routes/furnitures/furnitures.routes';
 import Wares from './routes/wares/wares.routes';
 import OfficeSurplies from './routes/office/offices.routes';
 import HomeAppliance from './routes/homeaplliances/homeappliance.route';
+import Equipments from './routes/equipments/equipments';
+import { useContext } from 'react';
+import { ProductContext } from './contexts/product.context';
 
 
 
 
 function App() {
+  const { products } = useContext(ProductContext);
+
+  console.log(products);
   return (
     <Routes>
       <Route path='/' element={<Navigation/>}>
@@ -22,6 +28,7 @@ function App() {
         <Route path='homeappliances' element={<HomeAppliance/>}/>
         <Route path="furnitures" element={<Furnitures/>}/>
         <Route path="wares" element={<Wares/>}/>
+        <Route path="equipments" element={<Equipments/>}/>
         <Route path="office-surplies" element={<OfficeSurplies/>}/>
         {/* <Route path="others" element={<Others/>}/> */}
       </Route>

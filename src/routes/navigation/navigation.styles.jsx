@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { device } from "../../utils/breakpoint";
+import { Link } from "react-router-dom";
 
 
 
@@ -10,8 +11,8 @@ export const NavigationContainer = styled.div`
     padding:10px 20px;
     positon:fixed; 
     top:0;
-    box-shadow: 2px 2px 2px grey;
     left:0;
+    box-shadow: 2px 2px 2px grey;
     border-radius:  0px  0px 30px  50px;
     flex-direction: row;
     justify-content: space-between;
@@ -45,12 +46,12 @@ export const MobileIcon = styled.button`
     }
 `
 
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
     color:black;
     text-align:center;
 `
 
-export const NavLinkSide = styled.a`
+export const NavLinkSide = styled(Link)`
     color:black;
     text-align:center;
     padding:10px;

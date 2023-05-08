@@ -15,6 +15,8 @@ import { UserContext } from '../../contexts/user.context';
 import Button from '../../components/button/button.components';
 import { signOutUser } from '../../utils/firebase/firebase';
 import{ ReactComponent as ReactLogo } from "../../images/shopping-cart.svg";
+import { PRODUCTS } from '../../assets/product';
+
 
 const SideBar = ({handleToggle}) => {
     const { currentUser } = useContext(UserContext);
@@ -32,19 +34,18 @@ const SideBar = ({handleToggle}) => {
             </ProfileContainer>}
             <DivTitle>CATEGORIES</DivTitle>
             <SideBarBody>
-                    <NavLinkSide to="/">Home</NavLinkSide>
+                    <NavLinkSide to="/" onClick={handleToggle}>Home</NavLinkSide>
                     <NavLinkSide to="/homeappliances" onClick={handleToggle}>Home Appliances</NavLinkSide>
-                    <NavLinkSide onClick={handleToggle}>Furnitures</NavLinkSide>
-                    <NavLinkSide onClick={handleToggle}>Kitchen equipments</NavLinkSide>
-                    <NavLinkSide onClick={handleToggle}>Clothings</NavLinkSide>
+                    <NavLinkSide to="/furnitures" onClick={handleToggle}>Furnitures</NavLinkSide>
+                    <NavLinkSide to="/equipments" onClick={handleToggle}>Kitchen equipments</NavLinkSide>
+                    <NavLinkSide to="/wares" onClick={handleToggle}>Clothings</NavLinkSide>
                     <NavLinkSide onClick={handleToggle}>Others</NavLinkSide>
             </SideBarBody>
         <DivTitle>PREFRENCE</DivTitle>
         <SideBarBody>
         <NavLinkSide style={{
             display:'flex',
-            justifyContent: 'space-between'
-        }}>
+            justifyContent: 'space-between'}}>
             <span>Night Mode</span> <input type ="checkbox"/>
         </NavLinkSide>
                     
@@ -100,7 +101,7 @@ const Navigation = () => {
                     <NavLink>Others</NavLink>
                 </NavBody>
             </NavigationContainer>
-            <Search/>
+            <Search products={PRODUCTS}/>
             <Outlet/>
         </div>
         

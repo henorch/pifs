@@ -21,7 +21,6 @@ export const ItemsHolder =styled.div`
 
 export const TitleHolder = styled.h3`
     width:100%;
-    background-color:white;
     text-align:center;
     
 `
