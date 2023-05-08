@@ -76,7 +76,9 @@ const Navigation = () => {
             {isOpen && <SideBar handleToggle={handleToggle}/>}
             <NavigationContainer>
                 <Logo alt="logo">PIFS</Logo>
+                <span>Cart</span>
                 <MobileIcon onClick={handleToggle}>&#9776;</MobileIcon>
+                
                 <NavBody>
                     <NavLink>Home</NavLink>
                     <NavLink>Home Appliances</NavLink>

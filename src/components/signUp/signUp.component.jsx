@@ -35,7 +35,7 @@ const SignUp = () => {
 
     return(
         <SignUpContainer>
-            <SignUpTitle>SIGN OUT</SignUpTitle>
+            <SignUpTitle>SIGN UP</SignUpTitle>
             <SubText as="italic">Register with username/email and password</SubText>
     <form onSubmit={handleSubmit(onSubmit)}>
             <FormInput
