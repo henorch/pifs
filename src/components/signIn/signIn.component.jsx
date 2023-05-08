@@ -19,6 +19,7 @@ const SignIn = () => {
     const {user} = await signInWithGoogleRedirect()
      await createUserAurhWithEmailAndPAssword(user);
      setCurrentUser(user)
+     navigate("/");
    }
    const onSubmit = async (data) => {
     const { email, password} = data;

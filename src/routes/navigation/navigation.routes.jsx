@@ -14,7 +14,7 @@ import Search from '../../components/search/search.component';
 import { UserContext } from '../../contexts/user.context';
 import Button from '../../components/button/button.components';
 import { signOutUser } from '../../utils/firebase/firebase';
-
+import{ ReactComponent as ReactLogo } from "../../images/shopping-cart.svg";
 
 const SideBar = ({handleToggle}) => {
     const { currentUser } = useContext(UserContext);
@@ -76,7 +76,19 @@ const Navigation = () => {
             {isOpen && <SideBar handleToggle={handleToggle}/>}
             <NavigationContainer>
                 <Logo alt="logo">PIFS</Logo>
-                <span>Cart</span>
+                <MobileIcon><ReactLogo
+                    style={{
+                        width:"35px",
+                        height:"35px",
+                        paddingTop:"10px",
+                        fontWeight:"bold"
+                    }}
+                /><sup 
+                style={{
+                    fontSize:'0.6em',
+                }}
+            >0</sup>
+                </MobileIcon>
                 <MobileIcon onClick={handleToggle}>&#9776;</MobileIcon>
                 
                 <NavBody>

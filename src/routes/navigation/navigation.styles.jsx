@@ -6,10 +6,11 @@ import { device } from "../../utils/breakpoint";
 export const NavigationContainer = styled.div`
     display:flex;
     flex:1;
-    background:#fe3454;
+    background:white;
     padding:10px 20px;
     positon:fixed; 
     top:0;
+    box-shadow: 2px 2px 2px grey;
     left:0;
     border-radius:  0px  0px 30px  50px;
     flex-direction: row;
@@ -36,7 +37,7 @@ export const Logo = styled.h2`
 export const MobileIcon = styled.button`
     background:transparent;
     border:none;
-    color:white;
+    color:black;
     font-size:45px;
 
     @media ${device.laptop}{
