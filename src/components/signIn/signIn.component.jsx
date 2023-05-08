@@ -1,35 +1,50 @@
 import { useForm } from "react-hook-form"
-import { signInWithFacebook, signInWithGooglePopups, signInWithGoogleRedirect } from "../../utils/firebase/firebase"
+import { createUserAurhWithEmailAndPAssword, signInWithFacebook, signInWithGooglePopups, signInWithGoogleRedirect, signInWithUserEmailAndPAssword } from "../../utils/firebase/firebase"
 import Button from "../button/button.components"
 import FormInput from "../form/form.component"
 import { ErrorShow, Link, SignInContainer, SignInTitle, SubText } from "./signIn.styled"
+import { UserContext } from "../../contexts/user.context"
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 
 const SignIn = () => {
-   const { register, handleSubmit, formState: {errors}} = useForm();
+   const { register, handleSubmit, reset, formState: {errors}} = useForm();
+    const { setCurrentUser } = useContext(UserContext);
+    const navigate = useNavigate()
 
+   
    const handleSignInWithGoogle = async () => {
      await signInWithGoogleRedirect()
    }
-   const onSubmit = data => {
-    console.log(data);
+   const onSubmit = async (data) => {
+    const { email, password} = data;
+    try {
+        const { user } = await signInWithUserEmailAndPAssword(email, password);
+        reset()
+        navigate("/");
+    } catch (error) {
+        console.log(error, error.message);
+        errors.push(error.message)
+    }
+
    }
 
-   console.log(errors);
+ 
 
     return(
         <SignInContainer>
             <SignInTitle>SIGN IN</SignInTitle>
-            <SubText as="italic">Sign in with username/email and password</SubText>
+            <SubText as="italic">Sign in with email and password</SubText>
         <form onSubmit={handleSubmit(onSubmit)}>
             <FormInput
-            name="username"
+            name="email"
             type="text"
-            label="username"
+            label="email"
             register={register}
             />
-            <ErrorShow>{errors.username?.message}</ErrorShow>
+            <ErrorShow>{errors.email?.message}</ErrorShow>
 
         <FormInput
             name="password"

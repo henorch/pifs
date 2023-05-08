@@ -33,8 +33,8 @@ function App() {
         <Route index path='/' element={<Home/>}/>
         <Route path='/homeappliances' element={<HomeAppliance/>}/>
         </Route>
-      <Route path='/' element={<AuthComponent/>}>
-        <Route index path='sign' element={<SignIn/>}/>
+      <Route path='/auth' element={<AuthComponent/>}>
+        <Route index  element={<SignIn/>}/>
         <Route path='signup' element={<SignUp/>}/>
       </Route>
       

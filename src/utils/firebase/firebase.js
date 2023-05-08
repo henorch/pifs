@@ -7,6 +7,9 @@ import {
     signInWithPopup,
     signInWithRedirect,
     createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
 } from 'firebase/auth'
 
 import {
@@ -25,6 +28,10 @@ const firebaseConfig = {
   messagingSenderId: "490963442232",
   appId: "1:490963442232:web:d45c16af41440009cf24cd"
 };
+
+
+export const onAuthStateChangedListerner = (callback) => 
+onAuthStateChanged(auth, callback);
 
 
 // Bellow are mainly the authentications
@@ -48,8 +55,12 @@ export const createUserAurhWithEmailAndPAssword = async (email, password) => {
     return await createUserWithEmailAndPassword(auth, email,password)
 }
 
+export const signInWithUserEmailAndPAssword = async (email, password) => {
+    if(!email || !password) return;
 
-
+    return await signInWithEmailAndPassword(auth, email, password)
+}
+export const signOutUser = async () => await signOut(auth);
 // Bellow are mainly the firestore
 export const createUserDocumentFromAuth = async (userAuth, 
     additionalInformation = {}) => {
@@ -71,8 +82,6 @@ export const createUserDocumentFromAuth = async (userAuth,
         } catch(error){
             console.log('error', error.message);
         }
-    }else{
-        console.log("user already exist");
     }
     return userDocRef
   }

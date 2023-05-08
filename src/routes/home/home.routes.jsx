@@ -1,61 +1,42 @@
-import { HomeContainer, 
-    MainContainer, 
-    MainContainer2,
-     Main2Inner1, 
-     Main2Inner2,
-    CategoryContainer } from "./home.styled";
-import Image1  from "../../images/pexels-cottonbro-studio-4108723.jpg";
+import CategoryMain from '../../components/categories-main/category-main.component';
 
 
-const Category = ({title, imageUrl}) => {
-   return (
-       <CategoryContainer>
-           <div className='background-image' style={{
-               backgroundImage: `url(${imageUrl})`,
-             }}/>
-             <div className='category-body-container'>
-               <h3>{title}</h3>
-               <span>SHOP NOW</span>
-             </div>
-           </CategoryContainer>
-           )
-     }
+const categories = [
+  {
+    "id": 1,
+    "title": "Tools",
+    "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
+  },
+  {
+    "id": 2,
+    "title": "Furnitures",
+    "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
+  },
+  {
+    "id": 3,
+    "title": "Wares",
+    "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
+  },
+  {
+    "id": 4,
+    "title": "Office Surplies",
+    "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
+  },
+  {
+    "id": 5,
+    "title": "Home Appliances",
+    "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
+  },
+  
+]
 
-
-    
 
 const Home = () => {
-    console.log(`${Image1}`);
-    return (
-        <HomeContainer>
-            <MainContainer style={{
-                backgroundImage: 'url("https://upload.wikimedia.org/wikipedia/commons/f/f5/Electronic_circuit.jpg")',
-                backgroundRepeat: "no"
-            }}> 
-                <Category title="Home Appliances"/>
-            </MainContainer>
-            
-            <MainContainer2>
-                <Main2Inner1>
-                <Category title="Kitchen Equipments"/>
-                </Main2Inner1>
-                <Main2Inner2>
-                <Category title="Clothings"/>
-                </Main2Inner2>
-            </MainContainer2>
-            <MainContainer2>
-            <Main2Inner1>
-            <Category title="Jeweries"/>
-            </Main2Inner1>
-            <Main2Inner2>
-            <Category title="Footwares"/>
-            </Main2Inner2>
-            <Main2Inner1><Category title="Others"/></Main2Inner1>
-            </MainContainer2>
-            <MainContainer2>
-            <Category title="Office Surplies"/>
-            </MainContainer2>
-        </HomeContainer>
-    )
+  return (
+      <div style={{marginTop: "40px"}}>
+        <CategoryMain categories={categories}/>
+      </div>
+  );
 }
+
 export default Home;

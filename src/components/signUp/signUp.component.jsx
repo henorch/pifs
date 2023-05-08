@@ -18,21 +18,21 @@ import { useForm } from "react-hook-form"
 
 const SignUp = () => {
 
-    const { register, handleSubmit, formState: {errors}} = useForm();
+    const { register, handleSubmit, reset, formState: {errors}} = useForm();
 
     const onSubmit = async (data) => {
-        const {displayName, email, password, confirmPassword} = data;
+        const {displayName, email, password} = data;
       
         try {
             const {user} =  await createUserAurhWithEmailAndPAssword(email, password);
             await createUserDocumentFromAuth(user, {displayName})
-            console.log(user);
+            reset()
         } catch (error) {
             console.log(error, error.message);
         }
        
     }
-    
+
     return(
         <SignUpContainer>
             <SignUpTitle>SIGN OUT</SignUpTitle>

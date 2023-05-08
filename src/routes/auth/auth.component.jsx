@@ -7,8 +7,8 @@ const AuthComponent = () => {
     return(
         <div>
           <AuthContainer>
-            <Tab to='/sign'>SIGN IN</Tab>
-            <Tab to='/signUp'>SIGN OUT</Tab>
+            <Tab to='/auth'>SIGN IN</Tab>
+            <Tab to='signUp'>SIGN OUT</Tab>
           </AuthContainer>
            <Outlet/>
         </div>
