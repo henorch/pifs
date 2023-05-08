@@ -27,9 +27,9 @@ const SideBar = ({handleToggle}) => {
    
     return(
         <SideBarNav>
-            <ProfileContainer>
+            {currentUser && <ProfileContainer>
                 <h2>{currentUser?.email}</h2>
-            </ProfileContainer>
+            </ProfileContainer>}
             <DivTitle>CATEGORIES</DivTitle>
             <SideBarBody>
                     <NavLinkSide to="/">Home</NavLinkSide>

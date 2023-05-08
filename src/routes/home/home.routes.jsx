@@ -10,8 +10,8 @@ const categories = [
   },
   {
     "id": 2,
-    "title": "Furnitures",
-    "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
+    "title": "Equipments",
+    "imageUrl": "https://i.imgur.com/5JTT0kc.jpg"
   },
   {
     "id": 3,
@@ -25,8 +25,8 @@ const categories = [
   },
   {
     "id": 5,
-    "title": "Home Appliances",
-    "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
+    "title": "Furnitures",
+    "imageUrl": "https://i.imgur.com/W0FAXxX.jpg"
   },
   
 ]
@@ -35,7 +35,7 @@ const categories = [
 const Home = () => {
   return (
       <HomeContainer>
-        <CategoryMain key={categories.id} categories={categories}/>
+        <CategoryMain categories={categories}/>
       </HomeContainer>
   );
 }
