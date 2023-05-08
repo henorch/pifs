@@ -2,9 +2,9 @@ import CategoriesMain from "../../components/categoriesmain/categories.component
 import HorizontalScroll from "../../components/horizontalscrol/horizontal.scroll.component"
 import Search from "../../components/search/search.component"
 import { DivTitle } from "../navigation/navigation.styles"
-import { HomeApplianceContainer } from "./homeaplliance.styled"
+import { HomeApplianceContainer } from "../general-category.styled"
 
-const HomeAppliance = [
+const FURNITURES = [
     {
         "id": 1,
         "name": "LG 42inches smart tv set",
@@ -29,7 +29,7 @@ const HomeAppliance = [
 
 
 
-const HomeAppliances = () => {
+const OfficeSurplies = () => {
     return (
         <>
     <h4 style={{
@@ -38,8 +38,8 @@ const HomeAppliances = () => {
         textAlign:"center"
     }}>Home Apppliances</h4>
     <HorizontalScroll/>
-    <CategoriesMain CATEGORIES={HomeAppliance}/>
+    <CategoriesMain CATEGORIES={FURNITURES}/>
     </>
     )
 }
-export default HomeAppliances
+export default OfficeSurplies

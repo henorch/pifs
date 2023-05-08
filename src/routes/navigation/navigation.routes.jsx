@@ -32,8 +32,8 @@ const SideBar = ({handleToggle}) => {
             </ProfileContainer>
             <DivTitle>CATEGORIES</DivTitle>
             <SideBarBody>
-                    <NavLinkSide to="/homeappliances" onClick={handleToggle}>Home</NavLinkSide>
-                    <NavLinkSide onClick={handleToggle}>Home Appliances</NavLinkSide>
+                    <NavLinkSide to="/">Home</NavLinkSide>
+                    <NavLinkSide to="/homeappliances" onClick={handleToggle}>Home Appliances</NavLinkSide>
                     <NavLinkSide onClick={handleToggle}>Furnitures</NavLinkSide>
                     <NavLinkSide onClick={handleToggle}>Kitchen equipments</NavLinkSide>
                     <NavLinkSide onClick={handleToggle}>Clothings</NavLinkSide>

@@ -1,4 +1,5 @@
 import CategoryMain from '../../components/categories-main/category-main.component';
+import { HomeContainer } from './home.styled';
 
 
 const categories = [
@@ -33,9 +34,9 @@ const categories = [
 
 const Home = () => {
   return (
-      <div style={{marginTop: "40px"}}>
-        <CategoryMain categories={categories}/>
-      </div>
+      <HomeContainer>
+        <CategoryMain key={categories.id} categories={categories}/>
+      </HomeContainer>
   );
 }
 

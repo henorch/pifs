@@ -29,7 +29,7 @@ const FURNITURES = [
 
 
 
-const Furnitures = () => {
+const Wares = () => {
     return (
         <>
     <h4 style={{
@@ -42,4 +42,4 @@ const Furnitures = () => {
     </>
     )
 }
-export default Furnitures
+export default Wares

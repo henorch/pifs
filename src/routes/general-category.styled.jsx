@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { device } from "../../utils/breakpoint"
+import { device } from "../utils/breakpoint"
 
 export const HomeApplianceContainer = styled.div`
     display:grid;

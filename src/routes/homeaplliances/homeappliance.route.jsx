@@ -29,7 +29,7 @@ const FURNITURES = [
 
 
 
-const Furnitures = () => {
+const HomeAppliance = () => {
     return (
         <>
     <h4 style={{
@@ -38,8 +38,8 @@ const Furnitures = () => {
         textAlign:"center"
     }}>Home Apppliances</h4>
     <HorizontalScroll/>
-    <CategoriesMain CATEGORIES={FURNITURES}/>
+    <CategoriesMain CATEGORIES={HomeAppliance}/>
     </>
     )
 }
-export default Furnitures
+export default HomeAppliance

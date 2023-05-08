@@ -48,7 +48,7 @@ export const CategoryContainer = styled.div`
 
 export const CategoryBody = styled.div`
         height: 90px; 
-        padding: 0 5px; 
+        padding: 10px 0px; 
         display: flex; 
         flex-direction: column; 
         align-items: center; 
@@ -57,7 +57,8 @@ export const CategoryBody = styled.div`
         opacity: 0.7; 
         position: absolute; 
         h2 { 
-            font-weight: bold; 
+            font-weight: bold;
+            text-align:center;
             margin: 0 6px 0; 
             font-size: 22px; 
             color: #4a4a4a; 
