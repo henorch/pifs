@@ -38,7 +38,7 @@ export const MobileIcon = styled.button`
     background:transparent;
     border:none;
     color:black;
-    font-size:45px;
+    font-size:40px;
 
     @media ${device.laptop}{
         display:none;

@@ -76,19 +76,19 @@ const Navigation = () => {
             {isOpen && <SideBar handleToggle={handleToggle}/>}
             <NavigationContainer>
                 <Logo alt="logo">PIFS</Logo>
-                <MobileIcon><ReactLogo
+                <ReactLogo
                     style={{
                         width:"35px",
                         height:"35px",
-                        paddingTop:"10px",
-                        fontWeight:"bold"
+                        paddingTop:"15px",
+                        marginRight:"15px"
                     }}
-                /><sup 
+                ><sup 
                 style={{
                     fontSize:'0.6em',
                 }}
-            >0</sup>
-                </MobileIcon>
+            >0</sup></ReactLogo>
+                
                 <MobileIcon onClick={handleToggle}>&#9776;</MobileIcon>
                 
                 <NavBody>
