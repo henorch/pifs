@@ -7,13 +7,13 @@ const categories = [
     "id": 1,
     "title": "Tools",
     "imageUrl": "https://i.ibb.co/cvpntL1/hats.png",
-    "url": "/tools"
+    "url": "/homeappliances"
   },
   {
     "id": 2,
     "title": "Equipments",
     "imageUrl": "https://i.imgur.com/5JTT0kc.jpg",
-    "url":"/equipment"
+    "url":"/equipments"
   },
   {
     "id": 3,
@@ -25,7 +25,7 @@ const categories = [
     "id": 4,
     "title": "Office Surplies",
     "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png",
-    "url":"/office"
+    "url":"/office-surplies"
   },
   {
     "id": 5,

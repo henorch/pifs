@@ -33,7 +33,10 @@ const SideBar = ({handleToggle}) => {
     return(
         <SideBarNav>
             {currentUser && <ProfileContainer>
-                <h2>{currentUser?.email}</h2>
+                <h2 style={{
+                    marginBottom:"-3px"
+                }}>{currentUser?.displayName}</h2>
+                <span>{currentUser?.email}</span>
             </ProfileContainer>}
             <DivTitle>CATEGORIES</DivTitle>
             <SideBarBody>
@@ -117,7 +120,7 @@ const Navigation = () => {
                     <NavLink>Clothings</NavLink>
                     <NavLink>Others</NavLink>
                 </NavBody>
-                {isCartOpen && <CartDropDown/>}
+                {isCartOpen && <CartDropDown ToggleCart={ToggleCart}/>}
             </NavigationContainer>
             <Search products={PRODUCTS}/>
             <Outlet/>

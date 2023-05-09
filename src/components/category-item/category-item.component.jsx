@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+import Button from "../button/button.components";
 import { CategoryBody, CategoryContainer } from "./category-item.styled";
 
+
 const Category = ({categories}) => {
-     const { title, imageUrl } = categories; 
+     const { title, imageUrl, url} = categories; 
     return (
-        <CategoryContainer>
+        <CategoryContainer to={`${url}`}>
             <div className='background-image' style={{
                 backgroundImage: `url(${imageUrl})`
               }}/>

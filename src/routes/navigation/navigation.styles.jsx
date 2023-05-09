@@ -108,9 +108,9 @@ export const ProfileContainer = styled.div`
   height:20vh;
   margin:2px auto;
   display:flex;
+  flex-direction:column;
   justify-content: center;
   align-items:center;
-  flex-direction:row;
 `
 
 export const SideBarBody = styled.div`

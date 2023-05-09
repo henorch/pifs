@@ -6,12 +6,13 @@ import { CartButton, CartDropDn, CartItemed, EmptyMessage } from './cart-dropdow
 import Button from '../button/button.components';
 
 
-const CartDropDown = () => {
+const CartDropDown = ({ ToggleCart }) => {
     const { cartItems, cartCount } = useContext(CartContext);
     const navigate = useNavigate();
 
     const goToCheck = () => {
         navigate('/checkout')
+        ToggleCart()
     }
     
     return (

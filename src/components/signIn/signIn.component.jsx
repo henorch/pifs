@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form"
-import { createUserAurhWithEmailAndPAssword, signInWithFacebook, signInWithGooglePopups, signInWithGoogleRedirect, signInWithUserEmailAndPAssword } from "../../utils/firebase/firebase"
+import { createUserAurhWithEmailAndPAssword, auth, signInWithGoogleRedirect, signInWithUserEmailAndPAssword } from "../../utils/firebase/firebase"
 import Button from "../button/button.components"
 import FormInput from "../form/form.component"
 import { ErrorShow, Link, SignInContainer, SignInTitle, SubText } from "./signIn.styled"
 import { UserContext } from "../../contexts/user.context"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { getRedirectResult } from "firebase/auth"
 
 
 
@@ -19,9 +20,25 @@ const SignIn = () => {
     const {user} = await signInWithGoogleRedirect()
      await createUserAurhWithEmailAndPAssword(user);
      setCurrentUser(user)
-     navigate("/");
+     navigate("/")
    }
+
+const goTo = () => {
+    navigate("/")
+}
+
+
+    // useEffect( async () =>{
+    //     const response = await getRedirectResult(auth)
+    //     const user = await createUserAurhWithEmailAndPAssword(response.user);
+    //     setCurrentUser(response.user)
+        
+    // },[])
+
+    
+    
    const onSubmit = async (data) => {
+    const errors = []
     const { email, password} = data;
     try {
         const { user } = await signInWithUserEmailAndPAssword(email, password);
