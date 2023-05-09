@@ -16,6 +16,9 @@ import Button from '../../components/button/button.components';
 import { signOutUser } from '../../utils/firebase/firebase';
 import{ ReactComponent as ReactLogo } from "../../images/shopping-cart.svg";
 import { PRODUCTS } from '../../assets/product';
+import { CartContext } from '../../contexts/cart.context';
+import CartDropDown from '../../components/cart-dropdown/cart-dropdown.component';
+
 
 
 const SideBar = ({handleToggle}) => {
@@ -67,10 +70,15 @@ const SideBar = ({handleToggle}) => {
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { isCartOpen, cartCount, setIsCartOpen} = useContext(CartContext)
 
     const handleToggle = () => {
         
         setIsOpen(!isOpen)
+    }
+
+    const ToggleCart = () => {
+        setIsCartOpen(!isCartOpen)
     }
     return (
         <div>
@@ -84,11 +92,20 @@ const Navigation = () => {
                         paddingTop:"15px",
                         marginRight:"15px"
                     }}
-                ><sup 
+                    onClick={ToggleCart}
+                /><sup 
                 style={{
-                    fontSize:'0.6em',
+                    fontSize:'1em',
+                    background:"blue",
+                    width:20,
+                    marginLeft:"-20px",
+                    marginBottom:"-10px",
+                    borderRadius:"20%",
+                    textAlign:"center",
+                    height:20,
+                    color:"white",
                 }}
-            >0</sup></ReactLogo>
+            >{cartCount}</sup>
                 
                 <MobileIcon onClick={handleToggle}>&#9776;</MobileIcon>
                 
@@ -100,12 +117,11 @@ const Navigation = () => {
                     <NavLink>Clothings</NavLink>
                     <NavLink>Others</NavLink>
                 </NavBody>
+                {isCartOpen && <CartDropDown/>}
             </NavigationContainer>
             <Search products={PRODUCTS}/>
             <Outlet/>
         </div>
-        
-
     )
 }
 

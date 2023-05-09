@@ -11,16 +11,11 @@ import Wares from './routes/wares/wares.routes';
 import OfficeSurplies from './routes/office/offices.routes';
 import HomeAppliance from './routes/homeaplliances/homeappliance.route';
 import Equipments from './routes/equipments/equipments';
-import { useContext } from 'react';
-import { ProductContext } from './contexts/product.context';
-
+import CheckOutPage from './routes/check-out-page/check-out.routes';
 
 
 
 function App() {
-  const { products } = useContext(ProductContext);
-
-  console.log(products);
   return (
     <Routes>
       <Route path='/' element={<Navigation/>}>
@@ -30,6 +25,7 @@ function App() {
         <Route path="wares" element={<Wares/>}/>
         <Route path="equipments" element={<Equipments/>}/>
         <Route path="office-surplies" element={<OfficeSurplies/>}/>
+        <Route path='checkout' element={<CheckOutPage/>}/>
         {/* <Route path="others" element={<Others/>}/> */}
       </Route>
       <Route path='/auth' element={<AuthComponent/>}>
