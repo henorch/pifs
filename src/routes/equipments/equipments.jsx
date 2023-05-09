@@ -10,15 +10,14 @@ import SearchReturn from "../../components/searchresult"
 
 
 const Equipments = () => {
-    const { products } = useContext(ProductContext);
-    
+   const {products} = useContext(ProductContext)
     return (
         <>
-   
-    <HorizontalScroll/>
+{/*    
+    <HorizontalScroll/> */}
     <h4 style={{
         width:"100%",
-        padding:"20px",
+        padding:"2px",
         textAlign:"center"
     }}>Equipments</h4>
      <CategoriesMain CATEGORIES={products}/>

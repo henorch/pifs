@@ -7,8 +7,9 @@ import { ProductContext } from "../../contexts/product.context";
 
 
 const CategoriesMain = ({title, CATEGORIES}) => {
-    const {filteredProduct} = useContext(ProductContext)
+    const { products, filteredProduct } = useContext(ProductContext)
     return (
+
         <>
         <TitleHolder>{title}</TitleHolder>
         <CategoryContainer>

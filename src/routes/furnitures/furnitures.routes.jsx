@@ -3,42 +3,25 @@ import HorizontalScroll from "../../components/horizontalscrol/horizontal.scroll
 import Search from "../../components/search/search.component"
 import { DivTitle } from "../navigation/navigation.styles"
 import { HomeApplianceContainer } from "../general-category.styled"
+import { PRODUCTS } from "../../assets/product"
+import { useContext } from "react"
+import { ProductContext } from "../../contexts/product.context"
 
-const FURNITURES = [
-    {
-        "id": 1,
-        "name": "LG 42inches smart tv set",
-        "description": "A smart tv with netflix and miracast equipments"
-    },
-    {
-        "id": 2,
-        "name": "Samsung 42inches smart tv set",
-        "description": "A smart tv with netflix and miracast equipments"
-    },
-    {
-        "id": 3,
-        "name": "Polaroid 42inches smart tv set",
-        "description": "A smart tv with netflix and miracast equipments"
-    },
-    {
-        "id": 4,
-        "name": "Home Theatre Samsung",
-        "description": "A smart tv with netflix and miracast equipments"
-    }
-]
+
 
 
 
 const Furnitures = () => {
+    const {filteredProduct} = useContext(ProductContext)
     return (
         <>
     <h4 style={{
         width:"100%",
-        padding:"20px",
+        padding:"2px",
         textAlign:"center"
-    }}>Home Apppliances</h4>
-    <HorizontalScroll/>
-    <CategoriesMain CATEGORIES={FURNITURES}/>
+    }}>Furnitures and Interrior Decor</h4>
+    {/* <HorizontalScroll/> */}
+    <CategoriesMain CATEGORIES={PRODUCTS}/>
     </>
     )
 }

@@ -4,18 +4,21 @@ import Search from "../../components/search/search.component"
 import { DivTitle } from "../navigation/navigation.styles"
 import { HomeApplianceContainer } from "../general-category.styled"
 import { PRODUCTS } from "../../assets/product"
+import { useContext } from "react"
+import { ProductContext } from "../../contexts/product.context"
 
 
 
 const Wares = () => {
+    const { filteredProduct } = useContext(ProductContext)
     return (
         <>
     <h4 style={{
         width:"100%",
-        padding:"20px",
+        padding:"2px",
         textAlign:"center"
     }}>Wares</h4>
-    <HorizontalScroll/>
+    <HorizontalScroll/> 
     <CategoriesMain CATEGORIES={PRODUCTS}/>
     </>
     )

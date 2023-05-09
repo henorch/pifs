@@ -9,7 +9,7 @@ export const ProductContext = new createContext({
 
 export const ProductProvider = ({children}) => {
     const [products] = useState(PRODUCTS)
-    const [filteredProduct, setProductFiltred] = useState(null)
+    const [filteredProduct, setProductFiltred] = useState(PRODUCTS)
 
     const value = {
         products,
