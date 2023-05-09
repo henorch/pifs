@@ -18,7 +18,6 @@ export const ItemsHolder =styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    height: 20vh;
     padding:2px;
     margin:2px;
 `
