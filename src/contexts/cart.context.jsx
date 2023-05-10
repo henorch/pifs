@@ -47,8 +47,10 @@ export const CartContext = createContext({
     setCartCount: () => {}
 });
 
+const  cartFromLocalStorage = JSON.parse(localStorage.getItem("cartItem") || "[]")
+
 export const CartProvider = ({children}) => {
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(cartFromLocalStorage);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartCount, setCartCount] = useState(0);
     const [cartTotal, setCartTotal] = useState(0)
@@ -63,6 +65,9 @@ export const CartProvider = ({children}) => {
         setCartTotal(newCartTotal);
     }, [cartItems])
 
+    useEffect(() => {
+        localStorage.setItem("cartItem", JSON.stringify(cartItems))
+    }, [cartItems])
 
     const addItemToCart = (productToAdd) => {
         setCartItems(addCartItems(cartItems, productToAdd))
