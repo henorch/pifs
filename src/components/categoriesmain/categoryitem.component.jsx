@@ -8,7 +8,6 @@ const CategoryItems = ({ categories }) => {
     const { addItemToCart, cartItems} = useContext(CartContext);
 
     const addProductToCart = () => addItemToCart(categories)
-    console.log(cartItems);
     return(
         <ItemsHolder key={id}>
             <img src={`${imgurl}`} style={{

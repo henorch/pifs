@@ -7,16 +7,20 @@ import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './contexts/user.context';
 import { ProductProvider } from './contexts/product.context';
 import { CartProvider } from './contexts/cart.context';
-// import { CartProvider } from './contexts/cart.context';
+import { Elements } from "@stripe/react-stripe-js"
+import { stripePromise } from './utils/stripe.js/stripe.utils';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
     <BrowserRouter>
     <UserProvider>
        <ProductProvider>
         <CartProvider>
-         <App />
+          <Elements stripe={stripePromise}>
+            <App />
+          </Elements>
          </CartProvider>
        </ProductProvider>
       </UserProvider>

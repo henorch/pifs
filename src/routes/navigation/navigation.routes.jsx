@@ -32,6 +32,14 @@ const SideBar = ({handleToggle}) => {
    
     return(
         <SideBarNav>
+            <span
+            onClick={handleToggle} 
+            style={{
+                display:"flex",
+                flex:1,
+                justifyContent:"flex-end",
+                padding:"5px"
+            }}>X</span>
             {currentUser && <ProfileContainer>
                 <h2 style={{
                     marginBottom:"-3px"
