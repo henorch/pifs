@@ -6,10 +6,17 @@ import { CardCvcElement,
        useStripe} from "@stripe/react-stripe-js"
 import Button from "../button/button.components"
 import { FormContainer, PaymentContainer } from "./payment.styled"
+import { useContext, useState } from "react"
+import { UserContext } from "../../contexts/user.context"
+import { CartContext } from "../../contexts/cart.context"
 
 
 
 const Payment =  () => {
+    const { currentUser } = useContext(UserContext)
+    const { cartTotal } = useContext(CartContext)
+    console.log(cartTotal);
+    const name = currentUser?.email;
     const stripe = useStripe();
     const elements = useElements();
 
@@ -25,7 +32,7 @@ const Payment =  () => {
             headers: {
                 'Content-Type':'application/json'
             },
-            body: JSON.stringify({ amount: 100000})
+            body: JSON.stringify({ amount: cartTotal})
         }).then(res => res.json());
         const {
             paymentIntent: { client_secret }, 
@@ -36,8 +43,7 @@ const Payment =  () => {
             payment_method: {
                 card: elements.getElement(CardNumberElement),
                 billing_details:{
-                    name:"Oluwaniyi Enoch",
-                    email:"henorch01@gmail.com"
+                    name
                 }
             }
         });
