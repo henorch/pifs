@@ -60,7 +60,10 @@ export const signInWithUserEmailAndPAssword = async (email, password) => {
 
     return await signInWithEmailAndPassword(auth, email, password)
 }
-export const signOutUser = async () => await signOut(auth);
+export const signOutUser = async () => {
+    await signOut(auth);
+    localStorage.clear()
+}
 // Bellow are mainly the firestore
 export const createUserDocumentFromAuth = async (userAuth, 
     additionalInformation = {}) => {
