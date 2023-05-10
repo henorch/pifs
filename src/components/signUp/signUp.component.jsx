@@ -19,14 +19,14 @@ import { useForm } from "react-hook-form"
 const SignUp = () => {
 
     const { register, handleSubmit, reset, formState: {errors}} = useForm();
-
+    
     const onSubmit = async (data) => {
         const {displayName, email, password} = data;
       
         try {
             const {user} =  await createUserAurhWithEmailAndPAssword(email, password);
             await createUserDocumentFromAuth(user, {displayName})
-            alert("You are successfully registered")
+            alert("You are successfully registered, You can proceed to sign in")
             reset()
         } catch (error) {
             console.log(error, error.message);

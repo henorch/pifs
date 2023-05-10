@@ -28,12 +28,16 @@ const goTo = () => {
 }
 
 
-    // useEffect( async () =>{
-    //     const response = await getRedirectResult(auth)
-    //     const user = await createUserAurhWithEmailAndPAssword(response.user);
-    //     setCurrentUser(response.user)
-        
-    // },[])
+    useEffect(() =>{
+    const googleSign = async () => {
+        const response = await getRedirectResult(auth)
+        const userDocRef = await createUserAurhWithEmailAndPAssword(response.user);
+        if(!userDocRef){
+           goTo()
+        }
+    }
+    googleSign()
+    },[])
 
     
     
