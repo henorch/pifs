@@ -26,6 +26,7 @@ const SignUp = () => {
         try {
             const {user} =  await createUserAurhWithEmailAndPAssword(email, password);
             await createUserDocumentFromAuth(user, {displayName})
+            alert("You are successfully registered")
             reset()
         } catch (error) {
             console.log(error, error.message);
@@ -71,14 +72,6 @@ const SignUp = () => {
                 <Button type="submit">SUBMIT</Button>
             </div>
             </form>
-            <p>or</p>
-            <Button type="button" style={{
-                margin: "5px",
-            }} buttonType="google">FACEBOOK</Button>
-            <Button style={{
-                margin: "5px",
-            }} 
-            type="button" buttonType="google">GOOGLE SIGN-IN</Button>
             <Link to='/sign'> I already Member?</Link>
         </SignUpContainer>
     )
