@@ -15,7 +15,7 @@ const FlutterWave = () =>  {
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
-      email: "henorch01@gmail.com",
+      email: currentUser?.email,
       phone_number: '07033407608',
       name: username,
     },
