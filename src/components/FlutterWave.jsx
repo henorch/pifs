@@ -30,7 +30,9 @@ const FlutterWave = () =>  {
 
   return (
     <div className="App">
-     <h1>Hello Test user</h1>
+        <Button>PIB</Button>
+        
+     <h1>or</h1>
 
       <Button
         onClick={() => {
@@ -43,7 +45,7 @@ const FlutterWave = () =>  {
           });
         }}
       >
-        Pay With Flutterwave
+        PAY NOW
       </Button>
     </div>
   );

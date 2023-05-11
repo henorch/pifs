@@ -1,4 +1,4 @@
-import { Outlet, useNavigate} from 'react-router-dom';
+import { Link, Outlet, useNavigate} from 'react-router-dom';
 import { Logo, 
     MobileIcon,
      NavBody, 
@@ -79,6 +79,7 @@ const SideBar = ({handleToggle}) => {
 
 
 
+
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { isCartOpen, cartCount, setIsCartOpen} = useContext(CartContext)
@@ -95,7 +96,7 @@ const Navigation = () => {
         <div>
             {isOpen && <SideBar handleToggle={handleToggle}/>}
             <NavigationContainer>
-                <Logo alt="logo">PIFS</Logo>
+                <Logo alt="logo"><Link to="/">PIFS</Link></Logo>
                 <ReactLogo
                     style={{
                         width:"35px",

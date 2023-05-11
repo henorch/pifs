@@ -22,11 +22,10 @@ const CheckOutPage = () => {
                 {cartItems.map((cartItem) => <CheckoutItem id={cartItem.id} cartItem={cartItem}/>
                     )
                 }
-                <Total>Total = ${ cartTotal }</Total>
-                <Button>PIB</Button>
+                {!cartTotal == 0 && <Total>Total = ${ cartTotal }</Total> }
+              {!cartTotal == 0 &&  
                 <FlutterWave />
-                <p> or </p>
-                <Payment/>
+              }
         </CheckOutContainer>
     )   
 }
