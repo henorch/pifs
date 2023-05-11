@@ -17,7 +17,7 @@ const FlutterWave = () =>  {
     customer: {
       email: currentUser?.email,
       phone_number: '07033407608',
-      name: username ,
+      name: username,
     },
     customizations: {
       title: currentUser?.displayName,
