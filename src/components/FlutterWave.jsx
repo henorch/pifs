@@ -7,7 +7,7 @@ import { CartContext } from '../contexts/cart.context';
 const FlutterWave = () =>  {
     const { currentUser } = useContext(UserContext)
     const { cartTotal } = useContext(CartContext)
-    const username = currentUser?.email || guest;
+    const username = currentUser?.email || "guest";
   const config = {
     public_key: "FLWPUBK_TEST-43dda424fa6b4470c6d117b959afd649-X",
     tx_ref: Date.now(),
@@ -15,7 +15,7 @@ const FlutterWave = () =>  {
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
-      email: username,
+      email: currentUser?.email,
       phone_number: '07033407608',
       name: username ,
     },
