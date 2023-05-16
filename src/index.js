@@ -9,6 +9,7 @@ import { ProductProvider } from './contexts/product.context';
 import { CartProvider } from './contexts/cart.context';
 import { Elements } from "@stripe/react-stripe-js"
 // import { stripePromise } from './utils/stripe.js/stripe.utils';
+import * as serviceWorkRegistration from "./serviceWorkerRegistration"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,7 +28,7 @@ root.render(
     </BrowserRouter>
 );
 
-
+serviceWorkRegistration.register()
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

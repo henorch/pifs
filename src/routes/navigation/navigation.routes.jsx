@@ -123,11 +123,11 @@ const Navigation = () => {
                 <MobileIcon onClick={handleToggle}>&#9776;</MobileIcon>
                 
                 <NavBody>
-                    <NavLink>Home</NavLink>
-                    <NavLink>Home Appliances</NavLink>
-                    <NavLink>Furnitures</NavLink>
-                    <NavLink>Kitchen equipments</NavLink>
-                    <NavLink>Clothings</NavLink>
+                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/homeappliances">Home Appliances</NavLink>
+                    <NavLink to="/furnitures">Furnitures</NavLink>
+                    <NavLink to="/equipments">Kitchen equipments</NavLink>
+                    <NavLink to="/wares">Clothings</NavLink>
                     <NavLink>Others</NavLink>
                 </NavBody>
                 {isCartOpen && <CartDropDown ToggleCart={ToggleCart}/>}
