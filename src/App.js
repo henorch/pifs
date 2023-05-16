@@ -20,7 +20,6 @@ const DetailPage = lazy(() => import('./routes/detail/details.routes'));
 function App() {
   return (
     <Suspense fallback={<p>Loading Please wait</p>}>
-
     <Routes>
       <Route path='/' element={<Navigation/>}>
         <Route index path='/' element={<Home/>}/>
@@ -36,10 +35,9 @@ function App() {
       <Route path='/auth' element={<AuthComponent/>}>
         <Route path='/auth' element={<SignIn/>}/>
         <Route path='signup' element={<SignUp/>}/>
-      </Route>
-    </Suspense>
-      
+      </Route>   
     </Routes>
+    </Suspense>
      
   );
 }
