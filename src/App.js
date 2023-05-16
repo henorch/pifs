@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import Spinner from './Spinner/spinner';
 const Navigation = lazy(() => import('./routes/navigation/navigation.routes'));
 const SignIn = lazy(() => import('./components/signIn/signIn.component'));
 const AuthComponent = lazy(() => import('./routes/auth/auth.component'));
@@ -19,7 +20,8 @@ const DetailPage = lazy(() => import('./routes/detail/details.routes'));
 
 function App() {
   return (
-    <Suspense fallback={<p>Loading Please wait</p>}>
+   
+    <Suspense fallback={ <Spinner/>}>
     <Routes>
       <Route path='/' element={<Navigation/>}>
         <Route index path='/' element={<Home/>}/>
