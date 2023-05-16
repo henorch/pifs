@@ -4,7 +4,7 @@ import { ProductContext } from "../../contexts/product.context";
 import SearchReturn from "../searchresult";
 
 
-const Search = () => {
+const Search = ({setIsFocus}) => {
     const { products, filteredProduct,
         setProductFiltred } = useContext(ProductContext)
     const [searchField, setSearchField] = useState('');
@@ -14,12 +14,12 @@ const Search = () => {
         setProductFiltred(products.filter((iten) => iten.name.includes(value)));
     }
 
-    console.log(filteredProduct);
-
+  
     return(
         <>
         <SearchGroup>
-             <SearchInput 
+        <SearchInput 
+            onFocus={()=> setIsFocus(true)}
             name="searchField"
             onChange={OnSearchChange}
             value={searchField}

@@ -13,7 +13,7 @@ const FlutterWave = () =>  {
     tx_ref: Date.now(),
     amount: cartTotal,
     currency: 'NGN',
-    payment_options: 'card,mobilemoney,ussd',
+    payment_options: 'card, mobilemoney, ussd',
     customer: {
       email: currentUser?.email,
       phone_number: '07033407608',
@@ -31,7 +31,7 @@ const FlutterWave = () =>  {
   return (
     <div className="App">
         <Button>PIB</Button>
-        
+
      <h1>or</h1>
 
       <Button

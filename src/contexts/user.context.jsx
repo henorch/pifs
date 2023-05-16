@@ -1,8 +1,6 @@
 import { createContext, useState, useEffect} from "react";
 import { createUserDocumentFromAuth,
-     getUserLocation,
      onAuthStateChangedListerner, 
-     userLocation
     } from "../utils/firebase/firebase";
 
 

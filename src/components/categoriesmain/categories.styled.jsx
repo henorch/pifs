@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { device } from "../../utils/breakpoint"
+import { Link } from "react-router-dom"
 
 export const CategoryContainer = styled.div`
     display:grid;
@@ -13,9 +14,10 @@ export const CategoryContainer = styled.div`
     }
 `
 
-export const ItemsHolder =styled.div`
+export const ItemsHolder =styled.button`
     background:white;
     display:flex;
+    border:none;
     justify-content:center;
     align-items:center;
     padding:2px;

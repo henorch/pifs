@@ -18,6 +18,7 @@ import{ ReactComponent as ReactLogo } from "../../images/shopping-cart.svg";
 import { PRODUCTS } from '../../assets/product';
 import { CartContext } from '../../contexts/cart.context';
 import CartDropDown from '../../components/cart-dropdown/cart-dropdown.component';
+import CategoriesMain from '../../components/categoriesmain/categories.component';
 
 
 
@@ -83,7 +84,7 @@ const SideBar = ({handleToggle}) => {
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { isCartOpen, cartCount, setIsCartOpen} = useContext(CartContext)
-
+    const [isFocus, setIsFocus ] = useState(false);
     const handleToggle = () => {
         
         setIsOpen(!isOpen)
@@ -131,8 +132,8 @@ const Navigation = () => {
                 </NavBody>
                 {isCartOpen && <CartDropDown ToggleCart={ToggleCart}/>}
             </NavigationContainer>
-            <Search products={PRODUCTS}/>
-            <Outlet/>
+            <Search isFocus={isFocus} setIsFocus={setIsFocus} products={PRODUCTS}/>
+             <Outlet/>
         </div>
     )
 }
