@@ -8,6 +8,7 @@ export const CheckOutContainer = styled.div`
     flex-direction: column; 
     align-items: center; 
     margin: 2px auto;
+    margin-top:80px;
 `
 
 export const CheckOutHeader = styled.div`

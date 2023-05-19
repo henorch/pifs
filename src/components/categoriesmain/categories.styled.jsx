@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export const CategoryContainer = styled.div`
     display:grid;
     grid-template-columns: auto;
-
+    width:100%;
     @media ${device.tablet}{
         grid-template-columns: auto auto;
     }

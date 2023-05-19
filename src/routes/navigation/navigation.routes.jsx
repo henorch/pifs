@@ -39,8 +39,9 @@ const SideBar = ({handleToggle}) => {
                 display:"flex",
                 flex:1,
                 justifyContent:"flex-end",
-                padding:"5px"
-            }}>X</span>
+                padding:"5px",
+                paddingRight: "10px"
+            }}>X CLOSE</span>
             {currentUser && <ProfileContainer>
                 <h2 style={{
                     marginBottom:"-3px"
@@ -115,6 +116,7 @@ const Navigation = () => {
                         width:"35px",
                         height:"35px",
                         paddingTop:"5px",
+                        fontSize:"40px",
                         marginLeft:"15px",
                         color: "blue"
                     }}
@@ -124,8 +126,8 @@ const Navigation = () => {
                     fontSize:'1em',
                     background:"blue",
                     width:20,
-                    marginLeft:"-20px",
-                    marginBottom:"-10px",
+                    marginLeft:"-5px",
+                    marginBottom:"10px",
                     borderRadius:"20%",
                     textAlign:"center",
                     height:20,
@@ -135,7 +137,6 @@ const Navigation = () => {
 
                 {isCartOpen && <CartDropDown ToggleCart={ToggleCart}/>}
             </NavigationContainer>
-            <Search isFocus={isFocus} setIsFocus={setIsFocus} products={PRODUCTS}/>
              <Outlet/>
         </div>
     )

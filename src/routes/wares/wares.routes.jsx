@@ -2,25 +2,27 @@ import CategoriesMain from "../../components/categoriesmain/categories.component
 import HorizontalScroll from "../../components/horizontalscrol/horizontal.scroll.component"
 import Search from "../../components/search/search.component"
 import { DivTitle } from "../navigation/navigation.styles"
-import { HomeApplianceContainer } from "../general-category.styled"
 import { PRODUCTS } from "../../assets/product"
 import { useContext } from "react"
 import { ProductContext } from "../../contexts/product.context"
+import { HomeContainer } from "../home/home.styled"
+
+
 
 
 
 const Wares = () => {
-    const { filteredProduct } = useContext(ProductContext)
+    const {filteredProduct} = useContext(ProductContext)
     return (
-        <>
+        <HomeContainer>
+            <HorizontalScroll/>
     <h4 style={{
         width:"100%",
-        padding:"2px",
+        padding:"10px",
         textAlign:"center"
     }}>Wares</h4>
-    <HorizontalScroll/> 
     <CategoriesMain CATEGORIES={PRODUCTS}/>
-    </>
+    </HomeContainer>
     )
 }
 export default Wares

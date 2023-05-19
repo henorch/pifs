@@ -2,24 +2,27 @@ import CategoriesMain from "../../components/categoriesmain/categories.component
 import HorizontalScroll from "../../components/horizontalscrol/horizontal.scroll.component"
 import Search from "../../components/search/search.component"
 import { DivTitle } from "../navigation/navigation.styles"
-import { HomeApplianceContainer } from "../general-category.styled"
 import { PRODUCTS } from "../../assets/product"
+import { useContext } from "react"
+import { ProductContext } from "../../contexts/product.context"
+import { HomeContainer } from "../home/home.styled"
 
 
 
 
 
-const OfficeSurplies = () => {
+const OfficeSupplies = () => {
+    const {filteredProduct} = useContext(ProductContext)
     return (
-        <>
+        <HomeContainer>
+            <HorizontalScroll/>
     <h4 style={{
         width:"100%",
-        padding:"20px",
+        padding:"10px",
         textAlign:"center"
-    }}>Home Apppliances</h4>
-    <HorizontalScroll/>
+    }}>OfficeSupplies</h4>
     <CategoriesMain CATEGORIES={PRODUCTS}/>
-    </>
+    </HomeContainer>
     )
 }
-export default OfficeSurplies
+export default OfficeSupplies

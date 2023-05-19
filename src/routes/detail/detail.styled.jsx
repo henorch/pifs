@@ -3,6 +3,7 @@ import { device } from "../../utils/breakpoint";
 
 export const MainContainer = styled.div`  
     width:100%;
+    margin-top:80px;
     @media ${device.laptop}{
         width:600px
     }
@@ -14,7 +15,6 @@ export const DetailContainer = styled.div`
     padding:4px;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     margin:2px;
     @media ${device.tablet}{
         flex-direction:row;
@@ -26,7 +26,7 @@ export const ImageContainer = styled.img`
     min-width:50vw;
     min-height:40vh;
     padding:20px;
-    background:white;
+    color: ${({ theme }) => theme.colors.text};
     margin:2px auto;
     flex:1;
     @media ${device.tablet}{

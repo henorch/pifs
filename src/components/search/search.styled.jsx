@@ -5,7 +5,7 @@ export const SearchGroup = styled.div`
     width:90%;
     margin:0 auto;
     display:flex;
-    margin-top:10px;
+    margin-top:80px;
     border-radius: 50px;
     justify-content:space-between;
     padding:15px;

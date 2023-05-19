@@ -11,7 +11,8 @@ export const NavigationContainer = styled.div`
     color: ${({ theme }) => theme.colors.text};
     border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     padding:10px 20px;
-    positon:fixed; 
+    position:fixed;
+    width:100%;
     top:0;
     left:0;
     flex-direction: row;
@@ -93,12 +94,14 @@ const slideIn = keyframes`
 
 
 export const SideBarNav = styled.div`
-    width: 80vw;
+    width: 96vw;
     height: 100vh;
     animation: ${slideIn} 0.09s linear;
     z-index:1;
     box-shadow: 20px 20px 50px 15px grey;
     position:fixed;
+    top:0;
+    overflow: auto;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};

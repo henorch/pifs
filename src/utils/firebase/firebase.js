@@ -36,6 +36,17 @@ onAuthStateChanged(auth, callback);
 
 // Bellow are mainly the authentications
 
+export const addCollectionAndDocument = async (collectionKey, objectToAdd) => {
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
+
+    objectToAdd.forEach(object => {
+
+      const docRef = doc(collectionRef, object.title.toLowerCase());
+      batch.set(docRef, object)
+    });
+}
+
 const  GoogleProvider = new GoogleAuthProvider();
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
