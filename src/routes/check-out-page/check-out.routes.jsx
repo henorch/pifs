@@ -35,6 +35,12 @@ const CheckOutPage = () => {
 
     return (
         <CheckOutContainer>
+            <h1 style={{
+                fontSize:"3em",
+                width:"100%",
+                textAlign:"left",
+                padding:"10px"
+            }}> Check Out</h1>
             <CheckOutHeader>
                 <div className='header-block'><span>Product</span></div>
                 <div className='header-block'><span>Description</span></div>

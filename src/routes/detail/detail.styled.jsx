@@ -12,7 +12,9 @@ export const DetailContainer = styled.div`
     flex:1;
     flex-direction: column;
     padding:4px;
-    background:white;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     margin:2px;
     @media ${device.tablet}{
         flex-direction:row;
@@ -38,8 +40,9 @@ export const ImageContainer = styled.img`
 export const DetailPad = styled.div`
     width:100%;
     height:48vh;
+    color: ${({ theme }) => theme.colors.text};
     @media ${device.tablet}{
-        background:white;
+        background-color: ${({ theme }) => theme.colors.background};
         display:flex;
         margin-top:-4px;
         flex-direction:column;
@@ -47,7 +50,8 @@ export const DetailPad = styled.div`
     }
 `
 export const InfoPad = styled.div`
-    background:white;
+    background-color: ${({ theme }) => theme.colors.background};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     margin:2px auto;
     padding:20px
 `

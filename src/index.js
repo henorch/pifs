@@ -10,11 +10,13 @@ import { CartProvider } from './contexts/cart.context';
 import { Elements } from "@stripe/react-stripe-js"
 // import { stripePromise } from './utils/stripe.js/stripe.utils';
 import * as serviceWorkRegistration from "./serviceWorkerRegistration"
+import { ThemeProvider } from './contexts/theme.context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
+  <ThemeProvider>
     <BrowserRouter>
     <UserProvider>
        <ProductProvider>
@@ -26,6 +28,7 @@ root.render(
        </ProductProvider>
       </UserProvider>
     </BrowserRouter>
+  </ThemeProvider>
 );
 
 serviceWorkRegistration.register()

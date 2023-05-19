@@ -8,8 +8,9 @@ export const CartDropDn = styled.div`
     display: flex; 
     flex-direction: column; 
     padding: 20px; 
-    border: 1px solid black; 
-    background-color: white; 
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     top: 90px; 
     right: 40px; 
     z-index: 5;

@@ -17,7 +17,9 @@ export const CategoryContainer = styled.div`
 export const ItemsHolder =styled.button`
     background:white;
     display:flex;
-    border:none;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     justify-content:center;
     align-items:center;
     padding:2px;

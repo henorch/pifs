@@ -1,8 +1,14 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.style.jsx';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useContext, useEffect, useState } from 'react';
 import Spinner from './Spinner/spinner';
+import { ThemeContext } from './contexts/theme.context';
+import { dark, light } from './components/theme/theme.styled';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './components/global.styles';
+import Button from './components/button/button.components';
+import { Switch } from './App.style.jsx';
 const Navigation = lazy(() => import('./routes/navigation/navigation.routes'));
 const SignIn = lazy(() => import('./components/signIn/signIn.component'));
 const AuthComponent = lazy(() => import('./routes/auth/auth.component'));
@@ -16,12 +22,39 @@ const Equipments = lazy(() => import('./routes/office/offices.routes'));
 const CheckOutPage = lazy(() => import('./routes/check-out-page/check-out.routes'));
 const DetailPage = lazy(() => import('./routes/detail/details.routes'));
 
+const ModeSwitch = () => {
+  return <Switch>Switch</Switch>
+}
 
 
 function App() {
-  return (
    
+  const [seletedTheme, setSelectedTheme] = useState(light);
+
+  const DayModeChange = () => {
+    setSelectedTheme(light)
+  }
+  const NightModeChange = () => {
+    setSelectedTheme(dark)
+  }
+
+  return (
+   <ThemeProvider theme={seletedTheme}>
+    <GlobalStyles/>
+    <button style={{
+      width:'20px',
+      height: '20px',
+      background:'black'
+    }} onClick={NightModeChange}></button>
+     <button style={{
+      width:'20px',
+      height: '20px',
+      background:'white'
+    }} onClick={DayModeChange}></button>
     <Suspense fallback={ <Spinner/>}>
+
+      <ModeSwitch/>
+
     <Routes>
       <Route path='/' element={<Navigation/>}>
         <Route index path='/' element={<Home/>}/>
@@ -40,6 +73,7 @@ function App() {
       </Route>   
     </Routes>
     </Suspense>
+   </ThemeProvider>
      
   );
 }

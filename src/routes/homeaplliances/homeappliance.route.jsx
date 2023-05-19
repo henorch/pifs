@@ -11,8 +11,6 @@ import { PRODUCTS } from "../../assets/product"
 const HomeAppliance = () => {
     return (
         <>
-    
-    {/* <HorizontalScroll/> */}
     <h4 style={{
         width:"100%",
         padding:"2px",

@@ -13,8 +13,6 @@ const Equipments = () => {
    const {products} = useContext(ProductContext)
     return (
         <>
-{/*    
-    <HorizontalScroll/> */}
     <h4 style={{
         width:"100%",
         padding:"2px",

@@ -97,13 +97,14 @@ const Navigation = () => {
         <div>
             {isOpen && <SideBar handleToggle={handleToggle}/>}
             <NavigationContainer>
-                <Logo alt="logo"><Link to="/">PIFS</Link></Logo>
+                <Logo as="Link" alt="logo">PIFS</Logo>
                 <ReactLogo
                     style={{
                         width:"35px",
                         height:"35px",
                         paddingTop:"15px",
-                        marginRight:"15px"
+                        marginRight:"15px",
+                        color: "blue"
                     }}
                     onClick={ToggleCart}
                 /><sup 

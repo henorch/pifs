@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 export const NavigationContainer = styled.div`
     display:flex;
     flex:1;
-    background:white;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     padding:10px 20px;
     positon:fixed; 
     top:0;
     left:0;
-    box-shadow: 2px 2px 2px grey;
-    border-radius:  0px  0px 30px  50px;
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
@@ -30,15 +30,17 @@ export const NavigationContainer = styled.div`
 export const Logo = styled.h2`
     width: 30%x;
     height:98%;
+    color: ${({ theme }) => theme.colors.text};
     display:flex;
     flex:1;
+    font-size:2em;
 
 `
 
 export const MobileIcon = styled.button`
     background:transparent;
     border:none;
-    color:black;
+    color: ${({ theme }) => theme.colors.text};
     font-size:40px;
 
     @media ${device.laptop}{
@@ -47,7 +49,7 @@ export const MobileIcon = styled.button`
 `
 
 export const NavLink = styled(Link)`
-    color:black;
+    color: ${({ theme }) => theme.colors.text};
     text-align:center;
 `
 
@@ -97,7 +99,9 @@ export const SideBarNav = styled.div`
     z-index:1;
     box-shadow: 20px 20px 50px 15px grey;
     position:fixed;
-    background:white;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
 `
 
 //Profile

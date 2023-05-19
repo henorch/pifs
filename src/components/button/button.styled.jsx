@@ -10,14 +10,15 @@ export const ButtonContainer = styled.button`
     line-height: 50px; 
     padding: 0 20px 0 20px; 
     font-size: 15px; 
-    background-color: black; 
-    color: white; 
     text-transform: uppercase; 
     font-family: 'Open Sans Condensed'; 
     font-weight: bolder; 
     border: none; cursor: pointer; 
     display: flex; 
     justify-content: center; 
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border: 1px solid ${({ theme }) => theme.colors.quoteBorder};
 
     &:hover { 
         background-color: white; 
