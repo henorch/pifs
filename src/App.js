@@ -22,38 +22,30 @@ const Equipments = lazy(() => import('./routes/office/offices.routes'));
 const CheckOutPage = lazy(() => import('./routes/check-out-page/check-out.routes'));
 const DetailPage = lazy(() => import('./routes/detail/details.routes'));
 
-const ModeSwitch = () => {
-  return <Switch>Switch</Switch>
+const ModeSwitch = ({light, dark}) => {
+  const { theme: {name} } = useContext(ThemeContext)
+  const info = name == "dark-theme" ? "light" : "dark"
+  const clickMode = name == "dark-theme" ? light : dark
+  return <Switch onClick={clickMode}>{info}</Switch> 
+  
 }
 
 
 function App() {
-   
-  const [seletedTheme, setSelectedTheme] = useState(light);
-
-  const DayModeChange = () => {
-    setSelectedTheme(light)
+  const { theme, setTheme } = useContext(ThemeContext)
+  const LightMode = () => {
+    setTheme(light)
   }
-  const NightModeChange = () => {
-    setSelectedTheme(dark)
+  const DarkMode = () => {
+    setTheme(dark)
   }
 
   return (
-   <ThemeProvider theme={seletedTheme}>
+   <ThemeProvider theme={theme}>
     <GlobalStyles/>
-    <button style={{
-      width:'20px',
-      height: '20px',
-      background:'black'
-    }} onClick={NightModeChange}></button>
-     <button style={{
-      width:'20px',
-      height: '20px',
-      background:'white'
-    }} onClick={DayModeChange}></button>
     <Suspense fallback={ <Spinner/>}>
 
-      <ModeSwitch/>
+      <ModeSwitch light={LightMode} dark={DarkMode}/>
 
     <Routes>
       <Route path='/' element={<Navigation/>}>

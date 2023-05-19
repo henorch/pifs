@@ -98,12 +98,24 @@ const Navigation = () => {
             {isOpen && <SideBar handleToggle={handleToggle}/>}
             <NavigationContainer>
                 <Logo as="Link" alt="logo">PIFS</Logo>
+                
+                
+                <MobileIcon onClick={handleToggle}>&#9776;</MobileIcon>
+                
+                <NavBody>
+                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/homeappliances">Home Appliances</NavLink>
+                    <NavLink to="/furnitures">Furnitures</NavLink>
+                    <NavLink to="/equipments">Kitchen equipments</NavLink>
+                    <NavLink to="/wares">Clothings</NavLink>
+                    <NavLink>Others</NavLink>
+                </NavBody>
                 <ReactLogo
                     style={{
                         width:"35px",
                         height:"35px",
-                        paddingTop:"15px",
-                        marginRight:"15px",
+                        paddingTop:"5px",
+                        marginLeft:"15px",
                         color: "blue"
                     }}
                     onClick={ToggleCart}
@@ -120,17 +132,7 @@ const Navigation = () => {
                     color:"white",
                 }}
             >{cartCount}</sup>
-                
-                <MobileIcon onClick={handleToggle}>&#9776;</MobileIcon>
-                
-                <NavBody>
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/homeappliances">Home Appliances</NavLink>
-                    <NavLink to="/furnitures">Furnitures</NavLink>
-                    <NavLink to="/equipments">Kitchen equipments</NavLink>
-                    <NavLink to="/wares">Clothings</NavLink>
-                    <NavLink>Others</NavLink>
-                </NavBody>
+
                 {isCartOpen && <CartDropDown ToggleCart={ToggleCart}/>}
             </NavigationContainer>
             <Search isFocus={isFocus} setIsFocus={setIsFocus} products={PRODUCTS}/>

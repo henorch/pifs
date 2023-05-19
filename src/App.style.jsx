@@ -13,4 +13,5 @@ export const Switch = styled.button`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
+  box-shadow: 5px 5px 5px solid grey inset;
 `
