@@ -6,7 +6,9 @@ export const SignUpContainer = styled.div`
     width:98%;
     display:flex;
     flex-direction:column;
-    background:white;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     align-content:center;
     text-align:center;
     padding:10px;

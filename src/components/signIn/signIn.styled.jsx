@@ -5,7 +5,9 @@ import styled from "styled-components";
 export const SignInContainer = styled.div`
     width:98%;
     display:flex;
-    background:white;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
     flex-direction:column;
     align-content:center;
     text-align:center;

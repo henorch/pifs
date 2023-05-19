@@ -18,7 +18,8 @@ export const Label = styled.label`
 export const Input = styled.input`
     padding:5px;
     border: none;
-
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     &:focus{
         border: none;
     }

@@ -2,7 +2,7 @@ import './check-out.styles.jsx'
 import { useContext } from 'react';
 import { CartContext } from "../../contexts/cart.context";
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
-import { CheckOutContainer, CheckOutHeader, Total } from './check-out.styles.jsx';
+import { CheckOutContainer, CheckOutHeader, EmptyCart, Total } from './check-out.styles.jsx';
 import Payment from '../../components/payment/payment.component.jsx';
 import Button from '../../components/button/button.components.jsx';
 import FlutterWave from '../../components/FlutterWave.jsx';
@@ -51,17 +51,8 @@ const CheckOutPage = () => {
                 {cartItems.map((cartItem) => <CheckoutItem id={cartItem.id} cartItem={cartItem}/>
                     )
                 }
-                {cartTotal == 0 && <div style={{
-                    height:"40vh",
-                    width:"50vh",
-                    margin:"10px",
-                    display:"flex",
-                    flexDirection:"column",
-                    alignItems:"center",
-                    justifyContent:"center",
-                    background:"white",
-                }}>You Cart is currently empty
-                    <Button onClick={()=> navigate("/")}>START SHOPPING</Button></div>}
+                {cartTotal == 0 && <EmptyCart>You Cart is currently empty
+                    <Button onClick={()=> navigate("/")}>START SHOPPING</Button></EmptyCart>}
             
                 {!cartTotal == 0 && <Total>Total = &#8358;{ cartTotal }</Total> }
                 {!cartTotal == 0 &&  <> <Button style={{

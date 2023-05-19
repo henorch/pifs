@@ -26,6 +26,17 @@ export const CheckOutHeader = styled.div`
         } 
     } 
 `
+export const EmptyCart = styled.div`
+        height:40vh;
+        width:50vh;
+        margin:10px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        background-color: ${({ theme }) => theme.colors.background};
+        color: ${({ theme }) => theme.colors.text};
+`
 
 export const Total = styled.div`
     margin-top: 30px; 
