@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-const HOMEAPPLINACES = [
+export const HOMEAPPLINACES = [
     {
         title: "TV set",
         items:[

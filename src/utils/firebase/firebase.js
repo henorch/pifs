@@ -16,6 +16,8 @@ import {
     doc,
     getFirestore,
     getDoc,
+    collection,
+    writeBatch,
     setDoc
 } from 'firebase/firestore';
 
@@ -40,11 +42,13 @@ export const addCollectionAndDocument = async (collectionKey, objectToAdd) => {
     const collectionRef = collection(db, collectionKey);
     const batch = writeBatch(db);
 
-    objectToAdd.forEach(object => {
-
+    objectToAdd.forEach((object) => {
       const docRef = doc(collectionRef, object.title.toLowerCase());
       batch.set(docRef, object)
     });
+
+    await batch.commit();
+    console.log("done");
 }
 
 const  GoogleProvider = new GoogleAuthProvider();

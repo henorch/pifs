@@ -9,6 +9,10 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './components/global.styles';
 import Button from './components/button/button.components';
 import { Switch } from './App.style.jsx';
+import { addCollectionAndDocument } from './utils/firebase/firebase';
+
+
+
 const Navigation = lazy(() => import('./routes/navigation/navigation.routes'));
 const SignIn = lazy(() => import('./components/signIn/signIn.component'));
 const AuthComponent = lazy(() => import('./routes/auth/auth.component'));
@@ -33,6 +37,8 @@ const ModeSwitch = ({light, dark}) => {
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext)
+
+ 
   const LightMode = () => {
     setTheme(light)
   }

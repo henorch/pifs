@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-const interior_decoration = [
+export const INTERRIOR = [
     {
         title: "bed spread",
         items:[
