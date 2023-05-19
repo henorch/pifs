@@ -24,7 +24,7 @@ const DetailPage = lazy(() => import('./routes/detail/details.routes'));
 
 const ModeSwitch = ({light, dark}) => {
   const { theme: {name} } = useContext(ThemeContext)
-  const info = name == "dark-theme" ? "light" : "dark"
+  const info = name == "dark-theme" ? "LM" : "DM"
   const clickMode = name == "dark-theme" ? light : dark
   return <Switch onClick={clickMode}>{info}</Switch> 
   

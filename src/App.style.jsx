@@ -10,6 +10,7 @@ export const Switch = styled.button`
   position: fixed;
   bottom: 0;
   right: 0;
+  overflow: hidden;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   border-bottom: 1px solid ${({ theme }) => theme.colors.quoteBorder};
